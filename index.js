@@ -1,25 +1,55 @@
 const http = require('http');
-//использовал ряд Лейбница. Посмотрел как вычисляется алгоритм на python.
+const EventEmitter = require('events');
+const fs = require('fs');
+const { setupLogger } = require('./logger');
+class AppServer extends EventEmitter {
+  start(port) {
+    this.server = http.createServer((req, res) => {
+      setTimeout(() => {
+        this.emit('z', req.url, req.method);
+      }, 2000);
+
+
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.write('<h1>Мишкевич Максим</h1>');
+      res.write('478<br>');
+      res.end(`Число PI: ${pi.toFixed(nomer)}`);
+    });
+
+    this.server.listen(port, () => {
+      this.emit('ServerWithPortCreated', port);
+    });
+  }
+  stop() {
+    setTimeout(() => {
+      this.server.close(() => {
+        this.emit('serverclosed');
+      });
+    }, 20000);
+  }
+}
 const nomer = 14;
 let sum = 0;
 let znak = 1;
-
-for (let k = 0; k < nomer; k++) {
-  const den = 2 * k + 1; //1/1 1/3 1/5 1/7 ... 1/27 не учитывая знаки
+for (let k = 0; k < 1000000; k++) {
+  const den = 2 * k + 1;
   sum += znak / den;
   znak = -znak;
 }
-// после цикла сумма ряда p/4 
-
 let pi = 4 * sum;
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-  res.write('<h1>Мишкевич Максим</h1>');
-  res.write('478<br>')
-  res.write(`Число PI: ${pi}`);
+const server = new AppServer();
+setupLogger(server);
+server.once('ServerWithPortCreated', (port) => {
+  console.log(`Сервер запущен на порту: ${port}`)
 });
-const PORT = 3000;
-server.listen(PORT, () => {
-  console.log(`Сервер запущен на http://localhost:${PORT}`);
+server.once('serverclosed', () => {
+  console.log("сервер остановлен");
+  process.exit(0);
 });
+server.on('z', (url, method) => {
+  console.log(`${url} ${method}`);
+  console.log("Hello from Event-Driven Server")
+});
+server.start(8080)
+server.stop()

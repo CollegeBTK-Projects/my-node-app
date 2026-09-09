@@ -1,0 +1,10 @@
+[17:06:34] ServerWithPortCreated: localhost: 8080
+[17:06:34] z : / GET
+[17:06:34] z : /favicon.ico GET
+[17:06:34] serverclosed: Сервер отключен
+[17:07:31] ServerWithPortCreated: localhost: 8080
+[17:07:31] z : / GET
+[17:07:31] serverclosed: Сервер отключен
+[17:09:04] ServerWithPortCreated: localhost: 8080
+[17:09:04] z : / GET
+[17:09:04] serverclosed: Сервер отключен
