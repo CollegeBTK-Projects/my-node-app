@@ -1,10 +1,29 @@
-[17:06:34] ServerWithPortCreated: localhost: 8080
-[17:06:34] z : / GET
-[17:06:34] z : /favicon.ico GET
-[17:06:34] serverclosed: Сервер отключен
-[17:07:31] ServerWithPortCreated: localhost: 8080
-[17:07:31] z : / GET
-[17:07:31] serverclosed: Сервер отключен
-[17:09:04] ServerWithPortCreated: localhost: 8080
-[17:09:04] z : / GET
-[17:09:04] serverclosed: Сервер отключен
+[00:04:08] ServerWithPortCreated: localhost: 8080
+[00:04:08] z : / GET
+[00:04:08] z : /order/67 GET
+[00:04:08] order:start: Заказ #67 начат.
+[00:04:08] order:processing: Заказ #67. Идёт обработка...
+[00:04:08] order:complete: 💰 Заказ 67 завершён на сумму 485 руб. PI = 3.1415916535897743 
+[00:04:08] z : /order/5 GET
+[00:04:08] order:start: Заказ #5 начат.
+[00:04:08] order:processing: Заказ #5. Идёт обработка...
+[00:04:08] order:complete: 💰 Заказ 5 завершён на сумму 346 руб. PI = 3.1415916535897743 
+[00:10:09] user:action: Пользователь 1 совершил действие "Учу Node.js/Express.js"
+[00:10:09] user:action: Пользователь 2 совершил действие "Выполнил 5 заданий"
+[00:10:09] ServerWithPortCreated: localhost: 8080
+[00:10:09] z : /order/5 GET
+[00:10:09] order:start: Заказ #5 начат.
+[00:10:09] order:processing: Заказ #5. Идёт обработка...
+[00:10:09] order:complete: 💰 Заказ 5 завершён на сумму 399 руб. PI = 3.1415916535897743 
+[00:10:09] z : /order/5 GET
+[00:10:09] order:start: Заказ #5 начат.
+[00:10:09] order:processing: Заказ #5. Идёт обработка...
+[00:10:09] order:complete: 💰 Заказ 5 завершён на сумму 754 руб. PI = 3.1415916535897743 
+[00:14:56] user:action: Пользователь 1 совершил действие "Учу Node.js/Express.js"
+[00:14:56] user:action: Пользователь 2 совершил действие "Выполнил 5 заданий"
+[00:14:56] ServerWithPortCreated: localhost: 8080
+[00:14:56] z : /order/5 GET
+[00:14:56] order:start: Заказ #5 начат.
+[00:14:56] order:processing: Заказ #5. Идёт обработка...
+[00:14:56] order:complete: 💰 Заказ 5 завершён на сумму 120 руб. PI = 3.1415916535897743 
+[00:14:56] serverclosed: Сервер отключен
